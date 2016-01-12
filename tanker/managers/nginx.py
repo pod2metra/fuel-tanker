@@ -16,4 +16,5 @@ def backup(archive):
 
 def restore(archive):
     for path, tag in _PARAMS:
-        utils.restore_file_in_container(archive, "nginx", tag, path)
+        utils.restore_file_in_container(
+            archive, "nginx", "nginx/{0}".format(tag), path)

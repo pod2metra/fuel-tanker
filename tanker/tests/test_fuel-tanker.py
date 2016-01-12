@@ -13,16 +13,16 @@
 # under the License.
 
 """
-test_fuel-tanker
+test_tanker
 ----------------------------------
 
-Tests for `fuel-tanker` module.
+Tests for `tanker` module.
 """
 
-from fuel-tanker.tests import base
+from tanker.tests import base
 
 
-class TestFuel-tanker(base.TestCase):
+class TestTanker(base.TestCase):
 
     def test_something(self):
         pass

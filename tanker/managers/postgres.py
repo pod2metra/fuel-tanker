@@ -15,7 +15,7 @@ def restore(archive):
     dump = archive.extractfile('postgres/dump.sql')
     containers = ["keystone", "nailgun", "ostf"]
     for container in containers:
-        subprocess.Popen([
+        subprocess.call([
             "systemctl", "stop", "docker-{0}.service".format(container)
         ])
         utils.exec_cmd_in_container(

@@ -2,5 +2,7 @@
 # of appearance. Changing the order has an impact on the overall integration
 # process, which may cause wedges in the gate later.
 
+cliff>=1.15.0
 pbr>=1.6
-cliff==1.15.0
+requests[sequrity]>=2.9.1
+six>=1.10.0
