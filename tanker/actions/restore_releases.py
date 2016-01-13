@@ -8,7 +8,8 @@ def add_releases(client, **context):
         "nailgun",
         "cat /usr/share/fuel-openstack-metadata/openstack.yaml")
     fixtures = yaml.load(data)
-    for fixture in fixtures:
-        data = fixture['fields']
-        data['state'] = data.get('state') or "available"
+    base_release_fields = fixtures[0]['fields']
+    for fixture in fixtures[1:]:
+        data = base_release_fields.copy()
+        data.update(fixture['fields'])
         client.create_release(data)
